@@ -52,7 +52,7 @@ get '/oauth/exchange' do
   end
 end
 
-get '/nylas/read-emails' do
+get '/nylas/recent-emails' do
   query_params = { limit: 5 }
   messages, = nylas.messages.list(identifier: session[:grant_id], query_params: query_params)
   messages.to_json
